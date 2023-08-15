@@ -1,4 +1,4 @@
-# Run this python file to instantly setup all the required tables.
+# Run this python file to instantly setup all the required tables (sample data for menu and room data included).
 
 import mysql.connector
 
@@ -67,6 +67,29 @@ mycursor.execute(create_custdata_table)
 mycursor.execute(create_restaurant_menu_table)
 mycursor.execute(create_orders_table)
 mycursor.execute(create_feedback_table)
+
+# Sample data for rooms table
+rooms_data = [
+    ('Single', 1, 100, 'yes'),
+    ('Double', 2, 150, 'yes'),
+    ('Suite', 4, 300, 'yes')
+]
+
+# Sample data for Restaurant_Menu table
+restaurant_menu_data = [
+    (1, 'Burger', 10),
+    (2, 'Pizza', 15),
+    (3, 'Salad', 7)
+]
+
+# SQL statements for data insertion
+insert_rooms_data = "INSERT INTO rooms (room_type, capacity, rate, availability) VALUES (%s, %s, %s, %s);"
+insert_restaurant_menu_data = "INSERT INTO Restaurant_Menu (id, item, rate) VALUES (%s, %s, %s);"
+
+# Execute the SQL statements for data insertion
+mycursor.executemany(insert_rooms_data, rooms_data)
+mycursor.executemany(insert_restaurant_menu_data, restaurant_menu_data)
+
 
 # Commit the changes and close the connection
 mydb.commit()
