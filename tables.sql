@@ -1,4 +1,4 @@
-/* DATABASE: HOTEL
+/* DATABASE NAME: HOTEL
 Use these to create the required tables.
 An example code for entering rooms data and menu data are at the end of the file.*/
 
