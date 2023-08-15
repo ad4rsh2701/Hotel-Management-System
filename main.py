@@ -1,5 +1,5 @@
 # HOTEL MANAGAMENT SYSTEM
-
+# Make sure to read the README.md file first!
 # imports
 from hms_def import register_customer, view_room_types, view_restaurant_menu, place_order, invoice, feedback
 
@@ -7,8 +7,7 @@ from hms_def import register_customer, view_room_types, view_restaurant_menu, pl
 def main():
     while True:
         # Display menu options to the user
-        print(' ')
-        print("-----------------------")
+        print("\n-----------------------")
         print("\033[1m\033[34mHOTEL MANAGEMENT SYSTEM\033[0m")
         print("-----------------------")
         print("1. Register and Checkout")
