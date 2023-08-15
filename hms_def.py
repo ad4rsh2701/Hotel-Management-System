@@ -5,7 +5,7 @@ import datetime
 import random
 
 # Connect to the MySQL database
-mydb = mysql.connector.connect(user='root', password='YOUR_PASSWORD', host='localhost', database='hotel')  # Database name is 'hotel'
+mydb = mysql.connector.connect(user='your_user', password='your_password', host='localhost', database='hotel')  # Database name is 'hotel'
 mycursor = mydb.cursor()
 
 # Definitions
