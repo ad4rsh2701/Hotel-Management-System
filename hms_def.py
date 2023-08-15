@@ -1,17 +1,16 @@
 # Imports
-import mysql.connector
-from prettytable import PrettyTable
+import mysql.connector     # Don't forget to install mysql.connector package! Use: pip install mysql-connector-python
+from prettytable import PrettyTable    # Install this package using: pip install prettytable
 import datetime
 import random
 
 # Connect to the MySQL database
-mydb = mysql.connector.connect(user='root', password='pankhu', host='localhost', database='hotel')
+mydb = mysql.connector.connect(user='root', password='YOUR_PASSWORD', host='localhost', database='hotel')  # Database name is 'hotel'
 mycursor = mydb.cursor()
 
 # Definitions
 def register_customer():
-    print("")
-    print("\033[1m\033[32mREGISTRATION\033[0m")
+    print("\n\033[1m\033[32mREGISTRATION\033[0m")
     print("-------------")
 
     # Get customer information from the user
