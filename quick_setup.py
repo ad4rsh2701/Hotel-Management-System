@@ -2,14 +2,20 @@
 
 import mysql.connector
 
-# Connect to the MySQL database
+# Connect to the MySQL server
 mydb = mysql.connector.connect(
     user='your_username',
     password='your_password',
-    host='localhost',
-    database='hotel'
+    host='localhost'
 )
 mycursor = mydb.cursor()
+
+# Create the HOTEL database if it doesn't exist
+create_database = "CREATE DATABASE IF NOT EXISTS HOTEL;"
+mycursor.execute(create_database)
+
+# Switch to the HOTEL database
+mycursor.execute("USE HOTEL")
 
 # SQL statements for table creation
 create_rooms_table = """
